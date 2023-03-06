@@ -17,12 +17,9 @@ function App() {
 
   useEffect(() => {
     if (user) {
-      const loadProfile = async () => {
-        const profile = await fetchUserProfile(user.access_token);
-        setProfile(profile);
-        console.log(profile);
-      };
-      loadProfile();
+      fetchUserProfile(user.access_token).then((profile) =>
+        setProfile(profile)
+      );
     }
   }, [user]);
 

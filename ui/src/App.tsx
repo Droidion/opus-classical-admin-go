@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { Hero, Button } from "react-daisyui";
 import { TokenResponse, useGoogleLogin } from "@react-oauth/google";
-import { fetchUserProfile, Profile } from "./fetchUserProfile";
+import { useRecoilState } from "recoil";
+import { fetchUserProfile } from "./fetchUserProfile";
+import { profileState } from "./profileState";
 
 function App() {
   const [user, setUser] = useState<TokenResponse | null>(null);
-  const [profile, setProfile] = useState<Profile | null>(null);
+  const [profile, setProfile] = useRecoilState(profileState);
 
   const login = useGoogleLogin({
     onSuccess: (tokenResponse) => setUser(tokenResponse),
@@ -34,7 +36,12 @@ function App() {
           {profile ? (
             <div>
               <div>Hello, {profile.name}</div>
-              <img className="m-auto my-6 rounded-full" src={profile.picture} />
+              <img
+                alt="avatar"
+                className="m-auto my-6 rounded-full"
+                src={profile.picture}
+                referrerPolicy="no-referrer"
+              />
               <Button color="primary" onClick={() => logout()}>
                 Google Sign out
               </Button>

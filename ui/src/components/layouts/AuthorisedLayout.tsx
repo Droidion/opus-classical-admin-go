@@ -7,7 +7,7 @@ export default function AuthorisedLayout() {
       <div className="flex w-full component-preview p-4 pb-4 items-center justify-center gap-2 font-sans">
         <TopMenu />
       </div>
-      <main>
+      <main className="p-8 prose">
         <Outlet />
       </main>
     </>

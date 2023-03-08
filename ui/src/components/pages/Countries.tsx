@@ -1,4 +1,4 @@
-import { Table } from "react-daisyui";
+import { Button, Table } from "react-daisyui";
 
 const data = [
   {
@@ -23,6 +23,8 @@ export default function Countries() {
         <Table.Head>
           <span>Id</span>
           <span>Name</span>
+          <span>Edit</span>
+          <span>Delete</span>
         </Table.Head>
 
         <Table.Body>
@@ -31,6 +33,12 @@ export default function Countries() {
               <Table.Row key={el.id}>
                 <span>{el.id}</span>
                 <span>{el.name}</span>
+                <span>
+                  <Button size="xs">Edit</Button>
+                </span>
+                <span>
+                  <Button size="xs">Delete</Button>
+                </span>
               </Table.Row>
             );
           })}

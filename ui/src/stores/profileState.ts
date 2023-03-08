@@ -1,5 +1,5 @@
 import { atom } from "recoil";
-import { Profile } from "./fetchUserProfile";
+import { Profile } from "../fetchUserProfile";
 
 export const profileState = atom<Profile | null>({
   key: "profileState", // unique ID (with respect to other atoms/selectors)

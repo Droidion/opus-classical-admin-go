@@ -1,5 +1,5 @@
 import { Button, Dropdown, Menu, Navbar } from "react-daisyui";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { profileState } from "../../stores/profileState";
 
@@ -18,25 +18,25 @@ export default function TopMenu() {
       <div className="flex-none">
         <Menu horizontal className="p-0">
           <Menu.Item>
-            <a>Countries</a>
+            <Link to="/content/countries">Countries</Link>
           </Menu.Item>
           <Menu.Item>
-            <a>Periods</a>
+            <Link to="/content/periods">Periods</Link>
           </Menu.Item>
           <Menu.Item>
-            <a>Catalogues</a>
+            <Link to="/content/catalogues">Catalogues</Link>
           </Menu.Item>
           <Menu.Item>
-            <a>Instruments</a>
+            <Link to="/content/instruments">Instruments</Link>
           </Menu.Item>
           <Menu.Item>
-            <a>Labels</a>
+            <Link to="/content/labels">Labels</Link>
           </Menu.Item>
           <Menu.Item>
-            <a>Performers</a>
+            <Link to="/content/performers">Performers</Link>
           </Menu.Item>
           <Menu.Item>
-            <a>Composers</a>
+            <Link to="/content/composers">Composers</Link>
           </Menu.Item>
         </Menu>
         <Dropdown vertical="end">
